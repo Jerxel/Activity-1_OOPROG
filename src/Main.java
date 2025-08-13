@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Person {
+interface Person {
     String getId();
     String getName();
     String getEmail();
 }
 
-public interface Borrowable {
+ interface Borrowable {
     void borrow();
 }
 
@@ -42,7 +42,7 @@ class Member implements Person {
     }
 }
 
-public class Librarian implements Person {
+class Librarian implements Person {
     private String employeeID;
     private String name;
     private String email;
@@ -81,7 +81,7 @@ public class Librarian implements Person {
 
 
 
-public class Library {
+class Library {
     private String name;
     private String address;
     private List<Book> books = new ArrayList<>();
@@ -109,7 +109,7 @@ public class Library {
     }
 }
 
-public class Book implements Borrowable {
+class Book implements Borrowable {
     private String title;
     private String author;
     private String ISBN;
@@ -142,7 +142,7 @@ public class Book implements Borrowable {
     }
 }
 
-public class Magazine implements Borrowable {
+class Magazine implements Borrowable {
     private String title;
     private String issueDate;
     private boolean available = true;
@@ -163,7 +163,7 @@ public class Magazine implements Borrowable {
     }
 }
 
-public class BorrowingTransactions {
+class BorrowingTransactions {
     private String transactionID;
     private String borrowDate;
     private String returnDate;
